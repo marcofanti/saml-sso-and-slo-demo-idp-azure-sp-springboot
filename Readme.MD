@@ -51,8 +51,7 @@ some configuration.
 ##### Azure IDP Configuration
 * Go to the previous configuration page and set the 
 **Identifier (Entity ID)**, you can set the value something
-like this **com:acme:springtest, please replace the name 
-"acme" with yours.
+like this **com:acme:springtest**, or some other unique identifier.
 
 * Now set the **Reply URL (Assertion Consumer Service URL)**, 
 this URL used by the **Azure IDP** to call the 
@@ -108,18 +107,16 @@ to this location `/saml-sso-and-slo-demo-idp-azure-sp-springboot/src/main/resour
       keytool -genkeypair -alias acme -storepass secret -keypass secret -keyalg RSA -keysize 2048 -validity 10000 -keystore samlKeystore.jks -dname "CN=Acme CEO, OU=Acme DevOps, O=Acme Software, L=New York, ST=NY, C=US"
       
       
-  Now change directory to this location `/saml-sso-and-slo-demo-idp-azure-sp-springboot/src/main/resources/keystore/`
-  
-  Execute the following command: 
+  Finally, execute the following command: 
   
       keytool -genkeypair -storepass secret -alias acme -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore acme.p12 -validity 3650 -dname "CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown"
       
   
 And here we are done with all the configuration and now we are ready to run this application. Enjoy!!
 
-To run this project go to the `/saml-sso-and-slo-demo-idp-azure-sp-springboot/src/main/java/com/spring/boot/security/saml/Application.java` and run the **Application.java** class.
+To run this project go to the `/saml-sso-and-slo-demo-idp-azure-sp-springboot/src/main/java/com/spring/boot/security/saml/Application.java` and run the **Application.java** class. If you have maven installed, you can also go to the `/saml-sso-and-slo-demo-idp-azure-sp-springboot/ directory and execute **mvn clean spring-boot:run**
 
 You have already added users in the IDP's application so you can use 
-those users to log in to this service.
+those users to log in to this service. To test, point your browser to **https://[your domain]:8443/**
 
 And we are done here, **Thank You.**
