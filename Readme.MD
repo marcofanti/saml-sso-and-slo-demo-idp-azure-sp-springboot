@@ -51,8 +51,8 @@ some configuration.
 ##### Azure IDP Configuration
 * Go to the previous configuration page and set the 
 **Identifier (Entity ID)**, you can set the value something
-like this **com:uday:spring:sp**, please replace the name 
-"uday" with yours.
+like this **com:acme:springtest, please replace the name 
+"acme" with yours.
 
 * Now set the **Reply URL (Assertion Consumer Service URL)**, 
 this URL used by the **Azure IDP** to call the 
@@ -98,24 +98,22 @@ to this location `/saml-sso-and-slo-demo-idp-azure-sp-springboot/src/main/resour
   **Note: first delete all the files available in this location**
   
   Now open the terminal in the same location and execute 
-  the following command.
+  the following command:
   
-      keytool -importcert -alias adfssigning -keystore samlKeystore.jks -file signature.cer
+      keytool -importcert -noprompt -alias adfssigning -storepass secret -keystore samlKeystore.jks -trustcacerts -file signature.cer
   
-  it will ask you for the password once you execute the 
-  command use this **nalle123** password for the same, 
-  and when it asks **Trust this certificate? [no]:** type 
-  **y** and your **.jks** file will be created.
+  Now execute one more command in the same location. 
+  Here is the command:
   
-  Now execute the one more command in the same location. 
-  Here is the command.
-  
-      keytool -genkeypair -alias apollo -keypass nalle123 -keyalg RSA -keysize 2048 -validity 10000 -keystore samlKeystore.jks
+      keytool -genkeypair -alias acme -storepass secret -keypass secret -keyalg RSA -keysize 2048 -validity 10000 -keystore samlKeystore.jks -dname "CN=Acme CEO, OU=Acme DevOps, O=Acme Software, L=New York, ST=NY, C=US"
       
-  it will ask you for the password once you execute the 
-  command use this **nalle123** password for the same. 
-  As well as it will ask you a bunch of questions just hit enter 
-  and you will be fine. When it asks **Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct? [no]:** type **y**.
+      
+  Now change directory to this location `/saml-sso-and-slo-demo-idp-azure-sp-springboot/src/main/resources/keystore/`
+  
+  Execute the following command: 
+  
+      keytool -genkeypair -storepass secret -alias acme -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore acme.p12 -validity 3650 -dname "CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown"
+      
   
 And here we are done with all the configuration and now we are ready to run this application. Enjoy!!
 
