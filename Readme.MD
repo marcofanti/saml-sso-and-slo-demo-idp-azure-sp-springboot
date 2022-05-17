@@ -18,7 +18,6 @@ will be the **Azure**.
 * Spring Test
 * Log4j2
 * Thymeleaf
-* IDE
 
 ### Prerequisites
 Before you start the application you must fulfill the 
