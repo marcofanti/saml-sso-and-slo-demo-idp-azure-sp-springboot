@@ -71,7 +71,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements I
     @Value("${service.provider.entity.id}")
     private String serviceProviderEntityId;
 
-    @Value("${idp.metedata.url}")
+    @Value("${idp.metadata.url}")
     private String ipdMetaDataUrl;
 
     @Value("${saml.keystore.password}")
