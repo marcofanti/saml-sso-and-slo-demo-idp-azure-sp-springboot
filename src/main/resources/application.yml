@@ -16,13 +16,13 @@ logging:
           security:
             saml: DEBUG
 
-service.provider.entity.id: # put your entity id here e.g com:uday:spring:boot:sp
+service.provider.entity.id: # put your entity id here e.g com:acme:springtest
 
 idp.metedata.url: # put your IDP metadata URL here
 
 # you can update credentials if you want, I recommend you to keep as it is for demo purpose
 saml:
-  keystore.password: nalle123
+  keystore.password: secret
   private.key:
-    alias: apollo
-    password: nalle123
+    alias: acmesignature
+    password: secret
