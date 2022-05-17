@@ -18,7 +18,7 @@ logging:
 
 service.provider.entity.id: # put your entity id here e.g com:acme:springtest
 
-idp.metedata.url: # put your IDP metadata URL here
+idp.metadata.url: # put your IDP metadata URL here
 
 # you can update credentials if you want, I recommend you to keep as it is for demo purpose
 saml:
