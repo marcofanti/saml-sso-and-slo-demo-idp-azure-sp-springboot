@@ -86,7 +86,7 @@ you have just configured in the **Azure IDP**.
 
       service.provider.entity.id: value of [Identifier (Entity ID)]
       
-      idp.metedata.url: URL of [App Federation Metadata Url]
+      idp.metadata.url: URL of [App Federation Metadata Url]
 
   And we are done with **application.yml** file configuration.
   
