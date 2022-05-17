@@ -58,7 +58,7 @@ this URL used by the **Azure IDP** to call the
 **Service Provider**, in our case the **Service Provider** 
 is this application. So here you can set the 
 **Reply URL (Assertion Consumer Service URL)** like this 
-**https://[your domain]/saml/SSO**.
+**https://[your domain]:8443/saml/SSO**.
 
 * Now slightly scroll down the configuration page, and you 
 will find the **SAML Signing Certificate** section, you can 
