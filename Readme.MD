@@ -57,7 +57,7 @@ this URL used by the **Azure IDP** to call the
 **Service Provider**, in our case the **Service Provider** 
 is this application. So here you can set the 
 **Reply URL (Assertion Consumer Service URL)** like this 
-**https://[your domain]:8443/saml/SSO**.
+**https://localhost:8443/saml/SSO**.
 
 * Now slightly scroll down the configuration page, and you 
 will find the **SAML Signing Certificate** section, you can 
@@ -116,6 +116,6 @@ And here we are done with all the configuration and now we are ready to run this
 To run this project go to the `/saml-sso-and-slo-demo-idp-azure-sp-springboot/src/main/java/com/spring/boot/security/saml/Application.java` and run the **Application.java** class. If you have maven installed, you can also go to the `/saml-sso-and-slo-demo-idp-azure-sp-springboot/ directory and execute **mvn clean spring-boot:run**
 
 You have already added users in the IDP's application so you can use 
-those users to log in to this service. To test, point your browser to **https://[your domain]:8443/**
+those users to log in to this service. To test, point your browser to **https://localhost:8443/**
 
 And we are done here, **Thank You.**
